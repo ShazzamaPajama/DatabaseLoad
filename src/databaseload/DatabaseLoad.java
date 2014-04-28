@@ -36,6 +36,7 @@ public class DatabaseLoad {
             Integer AC;
             Integer ATK;
             String Desc;
+            String Extra;
             int decider;
             
             //Abilities
@@ -108,6 +109,7 @@ public class DatabaseLoad {
             ATK = Randint.nextInt(Level * 2);
             
             Desc = "Description " + i;
+            Extra = "Extra Abilities " + i;
             
             //Set Abilities
             STR = Randint.nextInt(9) +10;
@@ -122,7 +124,7 @@ public class DatabaseLoad {
             Acrobatics = Randint.nextInt(20) + 1;
             
             try {
-                test.addBasicInfo(Name, Race, Type, Class, Align, Level, HP, AC, ATK, Desc);
+                test.addBasicInfo(Name, Race, Type, Class, Align, Level, HP, AC, ATK, Desc, Extra);
                 test.addAbilitySet(Name, Race, Type, STR, CON, DEX, INT, WIS, CHA);
                 test.addSkillSet(Name, Race, Type);
                 test.updateSkill(Name, Race, Type, "Acrobatics", Acrobatics);

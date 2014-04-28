@@ -47,6 +47,7 @@ public class DBManager {
                     + " ArmorClass INTEGER NOT NULL,"
                     + " AtkBonus INTEGER NOT NULL,"
                     + " Description TEXT NOT NULL,"
+                    + " ExtraAbilities TEXT NOT NULL,"
                     + " PRIMARY KEY (Name, Race, Type))";
             this.stmt.executeUpdate(SQLString);
             
@@ -215,7 +216,8 @@ public class DBManager {
             Integer HP, 
             Integer AC, 
             Integer ATK, 
-            String Desc) throws SQLException{
+            String Desc,
+            String Extra) throws SQLException{
         
         //Prepare strings for sql statement
         String name = "'" + Name + "'";
@@ -224,6 +226,7 @@ public class DBManager {
         String classname = "'" + Class + "'";
         String align = "'" + Alignment + "'";
         String desc = "'" + Desc + "'";
+        String extra = "'" + Extra + "'";
         
         
         
@@ -239,7 +242,8 @@ public class DBManager {
                 +  HP + ", "
                 +  AC + ", "
                 +  ATK + ", "
-                +  desc + ")";
+                +  desc + ", "
+                +  extra + " )";
         
         stmt.executeUpdate(SQL);
     }
